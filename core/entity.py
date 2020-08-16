@@ -19,7 +19,7 @@ class Entity:
     topping_salmon = (760 + 25, 694)
     topping_back = (831, 692)
 
-    rice_rice = (814, 648)
+    rice_rice = (814+25, 648)
 
     sake_sake = (810, 637)
 
@@ -27,6 +27,7 @@ class Entity:
     press_cook = (453, 753)
 
     dia_down_phone = (859, 698)
+    rice_dia_down_phone = (850, 695)
 
     inactive_topping_shrimp = (215, 174, 86)
     inactive_topping_unagi = (216, 169, 99)

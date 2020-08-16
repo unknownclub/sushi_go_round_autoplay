@@ -137,6 +137,7 @@ class Bot:
                 print('Buying salmon now... | px: ', px)
             else:
                 print("Cannot buy salmon | px: ", px)
+                time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'fish egg':
             self.mouse_click(Entity.phone)
@@ -149,6 +150,7 @@ class Bot:
                 print('Buying fish egg now... | px: ', px)
             else:
                 print("Cannot buy fish egg | px: ", px)
+                time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
 
         elif component == 'unagi':
@@ -162,6 +164,7 @@ class Bot:
                 print('Buying unagi now... | px: ', px)
             else:
                 print("Cannot buy unagi | px: ", px)
+                time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
 
         elif component == 'shrimp':
@@ -175,6 +178,7 @@ class Bot:
                 print('Buying shrimp now... | px: ', px)
             else:
                 print("Cannot buy shrimp | px: ", px)
+                time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
 
         elif component == 'rice':
@@ -188,6 +192,7 @@ class Bot:
                 print('Buying rice now... | px: ', px)
             else:
                 print("Cannot buy rice | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
+                time.sleep(1)
+                self.mouse_click(Entity.rice_dia_down_phone)
         else:
             pass

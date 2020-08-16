@@ -61,11 +61,8 @@ if __name__ == '__main__':
         time.sleep(2)
         test_cook_gunran_maki()
 
-        bot.buy('nori')
-        bot.buy('salmon')
         bot.buy('fish egg')
-        bot.buy('unagi')
-        bot.buy('shrimp')
+        bot.buy('nori')
         bot.buy('rice')
 
         test_get_path()

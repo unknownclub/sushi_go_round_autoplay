@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69fbad9e-bf3f-451d-938b-702fae53f79d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/test/test_px.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_px.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/entity.py" afterDir="false" />
@@ -38,6 +40,7 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\sushi_go_round_autoplay\scripts\test" />
+      <recent name="D:\Projects\sushi_go_round_autoplay\tests" />
       <recent name="D:\Projects\sushi_go_round_autoplay" />
     </key>
   </component>
