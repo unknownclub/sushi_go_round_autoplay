@@ -17,11 +17,12 @@ class Bot:
         self.box = ()
         self.current_mouse_pos = ()
         self.food = None
+        self.component = None
 
     def grab_img(self):
         self.box = (337, 458, 1134, 1056)
-        img = self.grab.grab(self.box)
-        img.save(f'{self.img_path}/test.jpg')
+        img = self.grab.grab()
+        return img
 
     def mouse_click(self, cord):
         self.current_mouse_pos = cord
@@ -59,3 +60,6 @@ class Bot:
             self.mouse_click(Entity.press_cook)
         else:
             pass
+
+    def buy(self, component):
+        self.component = component

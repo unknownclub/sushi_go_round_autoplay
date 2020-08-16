@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69fbad9e-bf3f-451d-938b-702fae53f79d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/test/test.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test/test_grab_img.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_grab_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/img/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/core/img/test.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/test.bat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +29,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\sushi_go_round_autoplay\scripts\test" />
+      <recent name="D:\Projects\sushi_go_round_autoplay\scripts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\sushi_go_round_autoplay" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
