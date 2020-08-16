@@ -66,6 +66,14 @@ class Bot:
         if component == 'nori':
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
+            px = self.grab_img().getpixel(Entity.topping_nori)
+            if px != (88, 68, 57):
+                self.mouse_click(Entity.topping_nori)
+                self.mouse_click(Entity.press_order)
+                print('Buying nori now... | px: ', px)
+            else:
+                print("Cannot buy nori | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
 
 
 

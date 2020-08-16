@@ -26,3 +26,5 @@ class Entity:
     press_order = (762, 657)
     press_cook = (453, 753)
 
+    dia_down_phone = (859, 698)
+
