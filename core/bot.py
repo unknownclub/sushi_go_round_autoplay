@@ -106,3 +106,88 @@ class Bot:
         self.mouse_click((649, 573))
         self.mouse_click((750, 572))
         self.mouse_click((861, 570))
+
+    def buy(self, component):
+
+        self.grab_img()
+        im = Image.open(self.temp_img)
+        rgb_im = im.convert('RGB')
+
+        self.component = component
+        if component == 'nori':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+            px = rgb_im.getpixel(Entity.topping_nori)
+            if px != Entity.inactive_topping_nori:
+                self.mouse_click(Entity.topping_nori)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying nori now... | px: ', px)
+            else:
+                print("Cannot buy nori | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+        elif component == 'salmon':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+            px = rgb_im.getpixel(Entity.topping_salmon)
+            if px != Entity.inactive_topping_salmon:
+                self.mouse_click(Entity.topping_salmon)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying salmon now... | px: ', px)
+            else:
+                print("Cannot buy salmon | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+        elif component == 'fish egg':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+            px = rgb_im.getpixel(Entity.topping_fish_egg)
+            if px != Entity.inactive_topping_fish_egg:
+                self.mouse_click(Entity.topping_fish_egg)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying fish egg now... | px: ', px)
+            else:
+                print("Cannot buy fish egg | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+
+        elif component == 'unagi':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+            px = rgb_im.getpixel(Entity.topping_unagi)
+            if px != Entity.inactive_topping_unagi:
+                self.mouse_click(Entity.topping_unagi)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying unagi now... | px: ', px)
+            else:
+                print("Cannot buy unagi | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+
+        elif component == 'shrimp':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+            px = rgb_im.getpixel(Entity.topping_shrimp)
+            if px != Entity.inactive_topping_shrimp:
+                self.mouse_click(Entity.topping_shrimp)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying shrimp now... | px: ', px)
+            else:
+                print("Cannot buy shrimp | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+
+        elif component == 'rice':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_rice)
+            px = rgb_im.getpixel(Entity.rice_rice)
+            if True:
+                self.mouse_click(Entity.rice_rice)
+                time.sleep(1)
+                self.mouse_click(Entity.press_order)
+                print('Buying rice now... | px: ', px)
+            else:
+                print("Cannot buy rice | px: ", px)
+                self.mouse_click(Entity.dia_down_phone)
+        else:
+            pass

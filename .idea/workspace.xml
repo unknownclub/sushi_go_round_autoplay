@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/img/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/img/temp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/core/img/temp.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_buy.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_buy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

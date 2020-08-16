@@ -17,7 +17,7 @@ class Entity:
     topping_nori = (770 + 20, 648)
     topping_fish_egg = (845 + 20, 642)
     topping_salmon = (760 + 25, 694)
-    topping_back = (831 + 20, 692)
+    topping_back = (831, 692)
 
     rice_rice = (814, 648)
 
@@ -28,9 +28,8 @@ class Entity:
 
     dia_down_phone = (859, 698)
 
-    inactive_topping_shrimp = (770 + 20, 587)
-    inactive_topping_unagi = (854 + 20, 587)
-    inactive_topping_nori = (770 + 20, 648)
-    inactive_topping_fish_egg = (845 + 20, 642)
-    inactive_topping_salmon = (760 + 25, 694)
-    inactive_topping_back = (831 + 20, 692)
+    inactive_topping_shrimp = (215, 174, 86)
+    inactive_topping_unagi = (216, 169, 99)
+    inactive_topping_nori = (247, 202, 173)
+    inactive_topping_fish_egg = (216, 181, 100)
+    inactive_topping_salmon = (161, 120, 64)
