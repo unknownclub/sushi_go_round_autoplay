@@ -6,6 +6,8 @@ import win32con
 from PIL import ImageGrab
 from numpy import *
 
+from core.entity import Entity
+
 
 class Bot:
     def __init__(self):
@@ -14,6 +16,7 @@ class Bot:
         self.img_path = os.path.join(self.main_path, 'img')
         self.box = ()
         self.current_mouse_pos = ()
+        self.food = None
 
     def grab_img(self):
         self.box = (337, 458, 1134, 1056)
@@ -35,3 +38,24 @@ class Bot:
         self.mouse_click((870, 818))
         # continue
         self.mouse_click((548, 739))
+
+    def cook(self, food):
+        self.food = food
+        if food == 'onigiri':
+            self.mouse_click(Entity.rice)
+            self.mouse_click(Entity.rice)
+            self.mouse_click(Entity.nori)
+            self.mouse_click(Entity.press_cook)
+        elif food == 'california roll':
+            self.mouse_click(Entity.rice)
+            self.mouse_click(Entity.nori)
+            self.mouse_click(Entity.roe)
+            self.mouse_click(Entity.press_cook)
+        elif food == 'gunran maki':
+            self.mouse_click(Entity.rice)
+            self.mouse_click(Entity.nori)
+            self.mouse_click(Entity.roe)
+            self.mouse_click(Entity.roe)
+            self.mouse_click(Entity.press_cook)
+        else:
+            pass

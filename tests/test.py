@@ -1,3 +1,5 @@
+import time
+
 from core.bot import Bot
 
 bot = Bot()
@@ -27,8 +29,29 @@ def test_start_game():
     bot.start_game()
 
 
+def test_cook_onigiri():
+    print("=== test cooking onigiri ===")
+    bot.cook('onigiri')
+
+
+def test_cook_california_roll():
+    print("=== test cooking california roll ===")
+    bot.cook('california roll')
+
+
+def test_cook_gunran_maki():
+    print("=== test cooking gunran maki ===")
+    bot.cook('gunran maki')
+
+
 if __name__ == '__main__':
     test_get_path()
     test_grab_image()
     # test_mouse_click()
     test_start_game()
+    time.sleep(2)
+    test_cook_onigiri()
+    time.sleep(2)
+    test_cook_california_roll()
+    time.sleep(2)
+    test_cook_gunran_maki()

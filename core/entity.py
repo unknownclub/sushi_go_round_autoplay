@@ -21,8 +21,8 @@ class Entity:
 
     rice_rice = (814, 648)
 
-    press_order = (762, 657)
-
-
-
     sake_sake = (810, 637)
+
+    press_order = (762, 657)
+    press_cook = (453, 753)
+
