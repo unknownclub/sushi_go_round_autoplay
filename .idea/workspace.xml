@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69fbad9e-bf3f-451d-938b-702fae53f79d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/test/test.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/test/test_grab_img.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_grab_img.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/test.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/test/test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/test/test_cooking.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_cooking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_grab_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_grab_img.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

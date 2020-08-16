@@ -63,3 +63,9 @@ class Bot:
 
     def buy(self, component):
         self.component = component
+        if component == 'nori':
+            self.mouse_click(Entity.phone)
+            self.mouse_click(Entity.phone_topping)
+
+
+
