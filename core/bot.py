@@ -3,7 +3,7 @@ import os
 
 import win32api
 import win32con
-from PIL import ImageGrab
+from PIL import ImageGrab, Image
 from numpy import *
 
 from core.entity import Entity
@@ -16,13 +16,21 @@ class Bot:
         self.img_path = os.path.join(self.main_path, 'img')
         self.box = ()
         self.current_mouse_pos = ()
+        self.current_mouse_focus = ()
         self.food = None
         self.component = None
+        self.temp_img = None
 
     def grab_img(self):
         self.box = (337, 458, 1134, 1056)
         img = self.grab.grab()
-        return img
+        self.temp_img = f'{self.img_path}/temp.jpg'
+        img.save(self.temp_img)
+        # return img
+
+    def focus(self, cord):
+        self.current_mouse_focus = cord
+        win32api.SetCursorPos((cord[0], cord[1]))
 
     def mouse_click(self, cord):
         self.current_mouse_pos = cord
@@ -61,70 +69,35 @@ class Bot:
         else:
             pass
 
-    def buy(self, component):
-        self.component = component
-        self.mouse_click(Entity.phone)
-        self.mouse_click(Entity.phone_topping)
+    def show_topping_px(self):
+        self.grab_img()
+        im = Image.open(self.temp_img)
+        rgb_im = im.convert('RGB')
 
-        if component == 'nori':
+        self.focus(Entity.topping_nori)
+        px = rgb_im.getpixel(Entity.topping_nori)
+        print("Nori RGB: ", px)
+        time.sleep(1)
 
-            px = self.grab_img().getpixel(Entity.topping_nori)
-            if px != (88, 68, 57):
-                self.mouse_click(Entity.topping_nori)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying nori now... | px: ', px)
-            else:
-                print("Cannot buy nori | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
-        elif component == 'salmon':
+        self.focus(Entity.topping_shrimp)
+        px = rgb_im.getpixel(Entity.topping_shrimp)
+        print("Shrimp RGB: ", px)
+        time.sleep(1)
 
-            px = self.grab_img().getpixel(Entity.topping_salmon)
-            if px != (174, 101, 48):
-                self.mouse_click(Entity.topping_salmon)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying salmon now... | px: ', px)
-            else:
-                print("Cannot buy salmon | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
-        elif component == 'fish egg':
+        self.focus(Entity.topping_unagi)
+        px = rgb_im.getpixel(Entity.topping_unagi)
+        print("Unagi RGB: ", px)
+        time.sleep(1)
 
-            px = self.grab_img().getpixel(Entity.topping_fish_egg)
-            if px != (225, 181, 105):
-                self.mouse_click(Entity.topping_fish_egg)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying fish egg now... | px: ', px)
-            else:
-                print("Cannot buy fish egg | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
+        self.focus(Entity.topping_salmon)
+        px = rgb_im.getpixel(Entity.topping_salmon)
+        print("Salmon RGB: ", px)
+        time.sleep(1)
 
-        elif component == 'unagi':
-
-            px = self.grab_img().getpixel(Entity.topping_unagi)
-            if px != (208, 168, 97):
-                self.mouse_click(Entity.topping_unagi)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying unagi now... | px: ', px)
-            else:
-                print("Cannot buy unagi | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
-
-        elif component == 'shrimp':
-
-            px = self.grab_img().getpixel(Entity.topping_shrimp)
-            if px != (225, 181, 105):
-                self.mouse_click(Entity.topping_shrimp)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying shrimp now... | px: ', px)
-            else:
-                print("Cannot buy shrimp | px: ", px)
-                self.mouse_click(Entity.dia_down_phone)
-        else:
-            pass
+        self.focus(Entity.topping_fish_egg)
+        px = rgb_im.getpixel(Entity.topping_fish_egg)
+        print("Fish egg RGB: ", px)
+        time.sleep(1)
 
     def clean(self):
         self.mouse_click((354, 574))
@@ -133,4 +106,3 @@ class Bot:
         self.mouse_click((649, 573))
         self.mouse_click((750, 572))
         self.mouse_click((861, 570))
-
