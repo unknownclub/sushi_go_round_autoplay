@@ -63,9 +63,11 @@ class Bot:
 
     def buy(self, component):
         self.component = component
+        self.mouse_click(Entity.phone)
+        self.mouse_click(Entity.phone_topping)
+
         if component == 'nori':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
+
             px = self.grab_img().getpixel(Entity.topping_nori)
             if px != (88, 68, 57):
                 self.mouse_click(Entity.topping_nori)
@@ -76,8 +78,7 @@ class Bot:
                 print("Cannot buy nori | px: ", px)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'salmon':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
+
             px = self.grab_img().getpixel(Entity.topping_salmon)
             if px != (174, 101, 48):
                 self.mouse_click(Entity.topping_salmon)
@@ -88,8 +89,7 @@ class Bot:
                 print("Cannot buy salmon | px: ", px)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'fish egg':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
+
             px = self.grab_img().getpixel(Entity.topping_fish_egg)
             if px != (225, 181, 105):
                 self.mouse_click(Entity.topping_fish_egg)
@@ -101,8 +101,7 @@ class Bot:
                 self.mouse_click(Entity.dia_down_phone)
 
         elif component == 'unagi':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
+
             px = self.grab_img().getpixel(Entity.topping_unagi)
             if px != (208, 168, 97):
                 self.mouse_click(Entity.topping_unagi)
@@ -114,8 +113,7 @@ class Bot:
                 self.mouse_click(Entity.dia_down_phone)
 
         elif component == 'shrimp':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
+
             px = self.grab_img().getpixel(Entity.topping_shrimp)
             if px != (225, 181, 105):
                 self.mouse_click(Entity.topping_shrimp)
