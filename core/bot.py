@@ -1,4 +1,5 @@
 import time
+import os
 
 import win32api
 import win32con
@@ -25,6 +26,12 @@ class Bot:
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
         time.sleep(0.1)
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
+        time.sleep(0.2)
 
     def start_game(self):
-        pass
+        # play
+        self.mouse_click((577, 565))
+        # skip
+        self.mouse_click((870, 818))
+        # continue
+        self.mouse_click((548, 739))
