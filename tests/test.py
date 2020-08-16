@@ -10,3 +10,8 @@ if __name__ == '__main__':
     print("=== test grab image ===")
     bot.grab_img()
     print("=== grab image OK! ===")
+
+    print("=== test mouse click ===")
+    cord = (50, 50)
+    print("mouse click at (x, y): ", cord)
+    bot.mouse_click(cord)
