@@ -5,6 +5,7 @@ import win32con
 
 from core.bot import Bot
 from core.entity import Entity
+import keyboard
 
 bot = Bot()
 
@@ -49,11 +50,8 @@ def test_cook_gunran_maki():
 
 
 if __name__ == '__main__':
+    test_start_game()
     while True:
-        test_get_path()
-        test_grab_image()
-        # test_mouse_click()
-        test_start_game()
         time.sleep(2)
         test_cook_onigiri()
         time.sleep(2)
@@ -64,16 +62,5 @@ if __name__ == '__main__':
         bot.buy('fish egg')
         bot.buy('nori')
         bot.buy('rice')
-
-        test_get_path()
-        test_grab_image()
-        # test_mouse_click()
-        test_start_game()
-        time.sleep(2)
-        test_cook_onigiri()
-        time.sleep(2)
-        test_cook_california_roll()
-        time.sleep(2)
-        test_cook_gunran_maki()
 
         bot.clean()

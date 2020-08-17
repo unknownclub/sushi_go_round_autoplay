@@ -69,34 +69,45 @@ class Bot:
         else:
             pass
 
+    def show_rice_px(self):
+        self.grab_img()
+        im = Image.open(self.temp_img)
+        rgb_im = im.convert('RGB')
+
+        self.focus(Entity.rice_rice)
+        px = rgb_im.getpixel(Entity.rice_rice)
+        print("active_rice = ", px)
+        time.sleep(1)
+
     def show_topping_px(self):
+
         self.grab_img()
         im = Image.open(self.temp_img)
         rgb_im = im.convert('RGB')
 
         self.focus(Entity.topping_nori)
         px = rgb_im.getpixel(Entity.topping_nori)
-        print("Nori RGB: ", px)
+        print("active_topping_nori = ", px)
         time.sleep(1)
 
         self.focus(Entity.topping_shrimp)
         px = rgb_im.getpixel(Entity.topping_shrimp)
-        print("Shrimp RGB: ", px)
+        print("active_topping_shrimp = ", px)
         time.sleep(1)
 
         self.focus(Entity.topping_unagi)
         px = rgb_im.getpixel(Entity.topping_unagi)
-        print("Unagi RGB: ", px)
+        print("active_topping_unagi = ", px)
         time.sleep(1)
 
         self.focus(Entity.topping_salmon)
         px = rgb_im.getpixel(Entity.topping_salmon)
-        print("Salmon RGB: ", px)
+        print("active_topping_salmon = ", px)
         time.sleep(1)
 
         self.focus(Entity.topping_fish_egg)
         px = rgb_im.getpixel(Entity.topping_fish_egg)
-        print("Fish egg RGB: ", px)
+        print("active_topping_fish_egg = ", px)
         time.sleep(1)
 
     def clean(self):
@@ -112,44 +123,51 @@ class Bot:
         self.grab_img()
         im = Image.open(self.temp_img)
         rgb_im = im.convert('RGB')
+        time.sleep(1)
 
         self.component = component
         if component == 'nori':
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
             px = rgb_im.getpixel(Entity.topping_nori)
-            if px != Entity.inactive_topping_nori:
+            print("current RGB: ", px)
+            print("Entity.topping_nori: ", Entity.topping_nori)
+            if px != Entity.active_topping_nori:
                 self.mouse_click(Entity.topping_nori)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying nori now... | px: ', px)
+                print('Buying nori now... | RGB: ', px)
             else:
-                print("Cannot buy nori | px: ", px)
+                print("Cannot buy nori | RGB: ", px)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'salmon':
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
             px = rgb_im.getpixel(Entity.topping_salmon)
-            if px != Entity.inactive_topping_salmon:
+            print("current RGB: ", px)
+            print("Entity.active_topping_salmon: ", Entity.active_topping_salmon)
+            if px != Entity.active_topping_salmon:
                 self.mouse_click(Entity.topping_salmon)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying salmon now... | px: ', px)
+                print('Buying salmon now... | RGB: ', px)
             else:
-                print("Cannot buy salmon | px: ", px)
+                print("Cannot buy salmon | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'fish egg':
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
             px = rgb_im.getpixel(Entity.topping_fish_egg)
-            if px != Entity.inactive_topping_fish_egg:
+            print("current RGB: ", px)
+            print("Entity.active_topping_fish_egg: ", Entity.active_topping_fish_egg)
+            if px != Entity.active_topping_fish_egg:
                 self.mouse_click(Entity.topping_fish_egg)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying fish egg now... | px: ', px)
+                print('Buying fish egg now... | RGB: ', px)
             else:
-                print("Cannot buy fish egg | px: ", px)
+                print("Cannot buy fish egg | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
 
@@ -157,13 +175,15 @@ class Bot:
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
             px = rgb_im.getpixel(Entity.topping_unagi)
-            if px != Entity.inactive_topping_unagi:
+            print("current RGB: ", px)
+            print("Entity.active_topping_unagi: ", Entity.active_topping_unagi)
+            if px != Entity.active_topping_unagi:
                 self.mouse_click(Entity.topping_unagi)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying unagi now... | px: ', px)
+                print('Buying unagi now... | RGB: ', px)
             else:
-                print("Cannot buy unagi | px: ", px)
+                print("Cannot buy unagi | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
 
@@ -171,27 +191,30 @@ class Bot:
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_topping)
             px = rgb_im.getpixel(Entity.topping_shrimp)
-            if px != Entity.inactive_topping_shrimp:
+            print("current RGB: ", px)
+            print("Entity.active_topping_shrimp: ", Entity.active_topping_shrimp)
+            if px != Entity.active_topping_shrimp:
                 self.mouse_click(Entity.topping_shrimp)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying shrimp now... | px: ', px)
+                print('Buying shrimp now... | RGB: ', px)
             else:
-                print("Cannot buy shrimp | px: ", px)
+                print("Cannot buy shrimp | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
-
         elif component == 'rice':
             self.mouse_click(Entity.phone)
             self.mouse_click(Entity.phone_rice)
             px = rgb_im.getpixel(Entity.rice_rice)
-            if True:
+            print("current RGB: ", px)
+            print("Entity.active_rice: ", Entity.active_rice)
+            if px != Entity.active_rice:
                 self.mouse_click(Entity.rice_rice)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
-                print('Buying rice now... | px: ', px)
+                print('Buying rice now... | RGB: ', px)
             else:
-                print("Cannot buy rice | px: ", px)
+                print("Cannot buy rice | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.rice_dia_down_phone)
         else:

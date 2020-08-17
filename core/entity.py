@@ -12,25 +12,28 @@ class Entity:
     phone_rice = (785, 660)
     phone_sake = (789, 684)
 
-    topping_shrimp = (770 + 20, 587)
-    topping_unagi = (854 + 20, 587)
-    topping_nori = (770 + 20, 648)
-    topping_fish_egg = (845 + 20, 642)
-    topping_salmon = (760 + 25, 694)
-    topping_back = (831, 692)
+    topping_shrimp = (788, 570)
+    topping_unagi = (867, 568)
+    topping_nori = (786, 626)
+    topping_fish_egg = (819, 634)
+    topping_salmon = (730, 687)
+    topping_back = (826, 691)
 
-    rice_rice = (814+25, 648)
+    rice_rice = (785, 627)
+    rice_rice_back = (770, 691)
+    rice_dia_down_phone = (850, 695)
 
     sake_sake = (810, 637)
 
     press_order = (762, 657)
     press_cook = (453, 753)
 
-    dia_down_phone = (859, 698)
-    rice_dia_down_phone = (850, 695)
+    dia_down_phone = (860, 692)
 
-    inactive_topping_shrimp = (215, 174, 86)
-    inactive_topping_unagi = (216, 169, 99)
-    inactive_topping_nori = (247, 202, 173)
-    inactive_topping_fish_egg = (216, 181, 100)
-    inactive_topping_salmon = (161, 120, 64)
+    active_topping_nori = (30, 68, 131)
+    active_topping_shrimp = (0, 4, 7)
+    active_topping_unagi = (16, 45, 0)
+    active_topping_salmon = (84, 67, 57)
+    active_topping_fish_egg = (36, 68, 115)
+
+    active_rice =  (224, 180, 105)

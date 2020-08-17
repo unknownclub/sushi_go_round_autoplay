@@ -9,6 +9,7 @@ verify_ssl = true
 pillow = "*"
 numpy = "*"
 pypiwin32 = "*"
+keyboard = "*"
 
 [requires]
 python_version = "3.7"
