@@ -20,6 +20,11 @@ class Bot:
         self.food = None
         self.component = None
         self.temp_img = None
+        self.food_on_hand = {
+            "nori": 10,
+            "fish egg": 10,
+            "rice": 10
+        }
 
     def grab_img(self):
         self.box = (337, 458, 1134, 1056)
@@ -55,17 +60,25 @@ class Bot:
             self.mouse_click(Entity.rice)
             self.mouse_click(Entity.nori)
             self.mouse_click(Entity.press_cook)
+            self.food_on_hand['rice'] -= 2
+            self.food_on_hand['nori'] -= 1
         elif food == 'california roll':
             self.mouse_click(Entity.rice)
             self.mouse_click(Entity.nori)
             self.mouse_click(Entity.roe)
             self.mouse_click(Entity.press_cook)
+            self.food_on_hand['rice'] -= 1
+            self.food_on_hand['nori'] -= 1
+            self.food_on_hand['fish egg'] -= 1
         elif food == 'gunran maki':
             self.mouse_click(Entity.rice)
             self.mouse_click(Entity.nori)
             self.mouse_click(Entity.roe)
             self.mouse_click(Entity.roe)
             self.mouse_click(Entity.press_cook)
+            self.food_on_hand['rice'] -= 1
+            self.food_on_hand['nori'] -= 1
+            self.food_on_hand['fish egg'] -= 2
         else:
             pass
 
@@ -136,24 +149,10 @@ class Bot:
                 self.mouse_click(Entity.topping_nori)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
+                self.food_on_hand['nori'] += 10
                 print('Buying nori now... | RGB: ', px)
             else:
                 print("Cannot buy nori | RGB: ", px)
-                self.mouse_click(Entity.dia_down_phone)
-        elif component == 'salmon':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
-            px = rgb_im.getpixel(Entity.topping_salmon)
-            print("current RGB: ", px)
-            print("Entity.active_topping_salmon: ", Entity.active_topping_salmon)
-            if px != Entity.active_topping_salmon:
-                self.mouse_click(Entity.topping_salmon)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying salmon now... | RGB: ', px)
-            else:
-                print("Cannot buy salmon | RGB: ", px)
-                time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'fish egg':
             self.mouse_click(Entity.phone)
@@ -165,41 +164,10 @@ class Bot:
                 self.mouse_click(Entity.topping_fish_egg)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
+                self.food_on_hand['fish egg'] += 10
                 print('Buying fish egg now... | RGB: ', px)
             else:
                 print("Cannot buy fish egg | RGB: ", px)
-                time.sleep(1)
-                self.mouse_click(Entity.dia_down_phone)
-
-        elif component == 'unagi':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
-            px = rgb_im.getpixel(Entity.topping_unagi)
-            print("current RGB: ", px)
-            print("Entity.active_topping_unagi: ", Entity.active_topping_unagi)
-            if px != Entity.active_topping_unagi:
-                self.mouse_click(Entity.topping_unagi)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying unagi now... | RGB: ', px)
-            else:
-                print("Cannot buy unagi | RGB: ", px)
-                time.sleep(1)
-                self.mouse_click(Entity.dia_down_phone)
-
-        elif component == 'shrimp':
-            self.mouse_click(Entity.phone)
-            self.mouse_click(Entity.phone_topping)
-            px = rgb_im.getpixel(Entity.topping_shrimp)
-            print("current RGB: ", px)
-            print("Entity.active_topping_shrimp: ", Entity.active_topping_shrimp)
-            if px != Entity.active_topping_shrimp:
-                self.mouse_click(Entity.topping_shrimp)
-                time.sleep(1)
-                self.mouse_click(Entity.press_order)
-                print('Buying shrimp now... | RGB: ', px)
-            else:
-                print("Cannot buy shrimp | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.dia_down_phone)
         elif component == 'rice':
@@ -213,9 +181,16 @@ class Bot:
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
                 print('Buying rice now... | RGB: ', px)
+                self.food_on_hand['rice'] += 10
             else:
                 print("Cannot buy rice | RGB: ", px)
                 time.sleep(1)
                 self.mouse_click(Entity.rice_dia_down_phone)
         else:
             pass
+
+    def check_component(self):
+        for k, v in self.food_on_hand.items():
+            if k == "nori" or k == "rice" or k == "fish egg":
+                if v < 4:
+                    self.buy(k)

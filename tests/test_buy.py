@@ -52,15 +52,13 @@ def test_cook_gunran_maki():
 if __name__ == '__main__':
     test_start_game()
     while True:
+        bot.check_component()
+
         time.sleep(2)
         test_cook_onigiri()
         time.sleep(2)
         test_cook_california_roll()
         time.sleep(2)
         test_cook_gunran_maki()
-
-        bot.buy('fish egg')
-        bot.buy('nori')
-        bot.buy('rice')
 
         bot.clean()

@@ -6,6 +6,6 @@ from core.entity import Entity
 bot = Bot()
 
 if __name__ == '__main__':
-    bot.show_topping_px()
-    #bot.show_rice_px()
+    #bot.show_topping_px()
+    bot.show_rice_px()
 

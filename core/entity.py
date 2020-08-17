@@ -30,10 +30,10 @@ class Entity:
 
     dia_down_phone = (860, 692)
 
-    active_topping_nori = (30, 68, 131)
-    active_topping_shrimp = (0, 4, 7)
-    active_topping_unagi = (16, 45, 0)
+    active_topping_nori = (224, 180, 105)
+    active_topping_shrimp = (217, 182, 116)
+    active_topping_unagi = (13, 46, 1)
     active_topping_salmon = (84, 67, 57)
-    active_topping_fish_egg = (36, 68, 115)
+    active_topping_fish_egg = (224, 180, 105)
 
-    active_rice =  (224, 180, 105)
+    active_rice =  (102, 64, 61)
