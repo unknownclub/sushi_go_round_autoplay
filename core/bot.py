@@ -3,7 +3,7 @@ import os
 
 import win32api
 import win32con
-from PIL import ImageGrab, Image
+from PIL import ImageGrab, Image, ImageOps
 from numpy import *
 
 from core.entity import Entity
@@ -194,3 +194,85 @@ class Bot:
             if k == "nori" or k == "rice" or k == "fish egg":
                 if v < 4:
                     self.buy(k)
+
+    def get_seat_1(self):
+        '''
+        pixel: 368, 536
+        '''
+        box = (368, 536, 368+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_1.jpg')
+        print("seat_1 color value: ", sum_color)
+        return sum_color
+
+    def get_seat_2(self):
+        '''
+        pixel: 495, 536
+        '''
+        box = (495, 536, 495+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_2.jpg')
+        print("seat_2 color value: ", sum_color)
+        return sum_color
+
+    def get_seat_3(self):
+        '''
+        pixel: 621, 536
+        '''
+        box = (621, 536, 621+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_3.jpg')
+        print("seat_3 color value: ", sum_color)
+        return sum_color
+
+    def get_seat_4(self):
+        '''
+        pixel: 747, 536
+        '''
+        box = (747, 536, 747+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_4.jpg')
+        print("seat_4 color value: ", sum_color)
+        return sum_color
+
+    def get_seat_5(self):
+        '''
+        pixel: 873, 536
+        '''
+        box = (873, 536, 873+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_5.jpg')
+        print("seat_5 color value: ", sum_color)
+        return sum_color
+
+    def get_seat_6(self):
+        '''
+        pixel: 999, 536
+        '''
+        box = (999, 536, 999+79, 536+12)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/seat_6.jpg')
+        print("seat_6 color value: ", sum_color)
+        return sum_color
+
+    def get_all_seat(self):
+        self.get_seat_1()
+        self.get_seat_2()
+        self.get_seat_3()
+        self.get_seat_4()
+        self.get_seat_5()
+        self.get_seat_6()
+
+

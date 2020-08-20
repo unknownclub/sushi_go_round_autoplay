@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69fbad9e-bf3f-451d-938b-702fae53f79d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/test/test_seat.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_seat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/entity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/img/temp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/core/img/temp.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_buy.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_buy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_px.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_px.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +31,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\sushi_go_round_autoplay\scripts\test" />
-      <recent name="D:\Projects\sushi_go_round_autoplay\scripts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\sushi_go_round_autoplay\scripts\test" />
       <recent name="D:\Projects\sushi_go_round_autoplay\tests" />
       <recent name="D:\Projects\sushi_go_round_autoplay" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\sushi_go_round_autoplay\scripts\test" />
+      <recent name="D:\Projects\sushi_go_round_autoplay\scripts" />
     </key>
   </component>
   <component name="RunDashboard">
