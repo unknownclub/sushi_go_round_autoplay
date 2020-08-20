@@ -1,6 +1,7 @@
 import time
 import os
 
+import keyboard
 import win32api
 import win32con
 from PIL import ImageGrab, Image, ImageOps
@@ -24,6 +25,12 @@ class Bot:
             "nori": 10,
             "fish egg": 10,
             "rice": 10
+        }
+
+        self.sushi_type = {
+            "onigiri": [2227, 2163, 2099],
+            "gunran maki": [2216, 2089, 1962],
+            "california roll": [2547, 2293]
         }
 
     def grab_img(self):
@@ -130,6 +137,7 @@ class Bot:
         self.mouse_click((649, 573))
         self.mouse_click((750, 572))
         self.mouse_click((861, 570))
+        time.sleep(1)
 
     def buy(self, component):
 
@@ -145,7 +153,7 @@ class Bot:
             px = rgb_im.getpixel(Entity.topping_nori)
             print("current RGB: ", px)
             print("Entity.topping_nori: ", Entity.topping_nori)
-            if px != Entity.active_topping_nori:
+            if 231 != self.cant_buy_nori():
                 self.mouse_click(Entity.topping_nori)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
@@ -160,7 +168,7 @@ class Bot:
             px = rgb_im.getpixel(Entity.topping_fish_egg)
             print("current RGB: ", px)
             print("Entity.active_topping_fish_egg: ", Entity.active_topping_fish_egg)
-            if px != Entity.active_topping_fish_egg:
+            if 231 != self.cant_buy_roe():
                 self.mouse_click(Entity.topping_fish_egg)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
@@ -176,7 +184,7 @@ class Bot:
             px = rgb_im.getpixel(Entity.rice_rice)
             print("current RGB: ", px)
             print("Entity.active_rice: ", Entity.active_rice)
-            if px != Entity.active_rice:
+            if 220 != self.cant_buy_rice():
                 self.mouse_click(Entity.rice_rice)
                 time.sleep(1)
                 self.mouse_click(Entity.press_order)
@@ -188,8 +196,10 @@ class Bot:
                 self.mouse_click(Entity.rice_dia_down_phone)
         else:
             pass
+        time.sleep(3)
 
     def check_component(self):
+        time.sleep(2)
         for k, v in self.food_on_hand.items():
             if k == "nori" or k == "rice" or k == "fish egg":
                 if v < 4:
@@ -199,7 +209,7 @@ class Bot:
         '''
         pixel: 368, 536
         '''
-        box = (368, 536, 368+79, 536+12)
+        box = (368, 536, 368 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -211,7 +221,7 @@ class Bot:
         '''
         pixel: 495, 536
         '''
-        box = (495, 536, 495+79, 536+12)
+        box = (495, 536, 495 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -223,7 +233,7 @@ class Bot:
         '''
         pixel: 621, 536
         '''
-        box = (621, 536, 621+79, 536+12)
+        box = (621, 536, 621 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -235,7 +245,7 @@ class Bot:
         '''
         pixel: 747, 536
         '''
-        box = (747, 536, 747+79, 536+12)
+        box = (747, 536, 747 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -247,7 +257,7 @@ class Bot:
         '''
         pixel: 873, 536
         '''
-        box = (873, 536, 873+79, 536+12)
+        box = (873, 536, 873 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -259,7 +269,7 @@ class Bot:
         '''
         pixel: 999, 536
         '''
-        box = (999, 536, 999+79, 536+12)
+        box = (999, 536, 999 + 79, 536 + 12)
         img = ImageOps.grayscale(self.grab.grab(box))
         sum_color = array(img.getcolors())
         sum_color = sum_color.sum()
@@ -275,4 +285,104 @@ class Bot:
         self.get_seat_5()
         self.get_seat_6()
 
+    def cant_buy_nori(self):
+        '''
+        pixel: 978, 780
+        '''
+        box = (978, 780, 978 + 14, 780 + 8)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/nori.jpg')
+        print("nori color value: ", sum_color)
+        return sum_color
 
+    def cant_buy_roe(self):
+        '''
+        pixel: 1081, 790
+        '''
+        box = (1081, 790, 1081 + 14, 790 + 8)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/roe.jpg')
+        print("roe color value: ", sum_color)
+        return sum_color
+
+    def cant_buy_rice(self):
+        '''
+        pixel: 1040, 781
+        '''
+        box = (1040, 781, 1040 + 14, 781 + 9)
+        img = ImageOps.grayscale(self.grab.grab(box))
+        sum_color = array(img.getcolors())
+        sum_color = sum_color.sum()
+        img.save(f'{self.img_path}/rice.jpg')
+        print("rice color value: ", sum_color)
+        return sum_color
+
+    def process_bot(self):
+        while True:
+            if keyboard.is_pressed('q'):
+                break
+            self.check_component()
+            if self.get_seat_1() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_1() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_1() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.check_component()
+            if self.get_seat_2() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_2() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_2() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.check_component()
+            if self.get_seat_3() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_3() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_3() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.check_component()
+            if self.get_seat_4() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_4() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_4() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.check_component()
+            if self.get_seat_5() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_5() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_5() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.check_component()
+            if self.get_seat_6() in self.sushi_type["onigiri"]:
+                self.cook("onigiri")
+            elif self.get_seat_6() in self.sushi_type["gunran maki"]:
+                self.cook("gunran maki")
+            elif self.get_seat_6() in self.sushi_type["california roll"]:
+                self.cook("california roll")
+            else:
+                pass
+
+            self.clean()
