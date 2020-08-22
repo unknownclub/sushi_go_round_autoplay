@@ -1,7 +1,6 @@
 import time
 import os
 
-import keyboard
 import win32api
 import win32con
 from PIL import ImageGrab, Image, ImageOps
@@ -323,8 +322,6 @@ class Bot:
 
     def process_bot(self):
         while True:
-            if keyboard.is_pressed('q'):
-                break
             self.check_component()
             if self.get_seat_1() in self.sushi_type["onigiri"]:
                 self.cook("onigiri")
